@@ -2,8 +2,8 @@ var token = "oHGHafj30eFYC608qFovVphfl";
 
 // the geojson files are large, so loading them locally
 var urls = {
-  basemap: "NeighborhoodMap.geojson",
-  streets: "streets.geojson",
+  basemap: "geojson/NeighborhoodMap.geojson",
+  streets: "geojson/streets.geojson",
   trees: "https://data.sfgov.org/resource/d9d2-cuwu.json"
 };
 

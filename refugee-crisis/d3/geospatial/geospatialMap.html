@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Geospatial Map</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/cover.css" rel="stylesheet">
+
+   <link rel="stylesheet" type="text/css" href="../geospatial/geospatialMapStyle.css">
+
+   <script src="https://d3js.org/d3.v4.js"></script>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">The Refugee Crisis</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="../../index.html">Home</a>
+                <a class="nav-link" href="../../data.html">Data</a>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn active">Visualizations</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a class="nav-link" href="../heatmap/heatMapSyria.html">Heat Map</a>
+                    <a class="nav-link active" href="geospatialMap.html">Geospatial</a>
+                    <a class="nav-link" href="../sankey/sankeyFlowDiagram.html">Sankey</a>
+                  </div>
+                </div>
+                <a class="nav-link" href="../../about.html">About</a>
+              </nav>
+            </div>
+          </div>
+
+          <!-- place heat map -->
+ <div class="padding-top-small"> 
+          <svg id="title" width="600" height="70"></svg> 
+          <svg id="map" width="620" height="430"></svg>
+          <script src="geospatialMap.js"></script>
+ </div>
+          <div class="contentVisDescript" width=100px height=100px>
+            <p class="contentPara">
+              This interactive geospatial map shows refugees accepted by country in 2013, giving a holistic world view of which countries are actively bearing the weight of the crisis. Hovering over countries shows how many refugees were accepted during the 2013 calander year, and clicking on any country allows you to zoom in and see how it compares to its neighbors. Here we see refugees from Iraq and Syria flowing into surrounding countries such as Iran, Jordan, Turkey, Lebanon, and Egypt. Of note are Middle Eastern countries in the same region with relatively few accepted refugees, such as Saudi Arabia, Qatar, United Arab Emirates, Oman, and Israel. Germany begins accepting refugees en masse, although Angela Merkel's "open door policy" would not be enacted until 2015.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../bootstrap4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+    
+  </body>
+</html>

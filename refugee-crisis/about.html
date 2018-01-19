@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Refugee Crisis Visualized">
+    <meta name="author" content="Denali Marsh">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>About</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	    .cover{
+      }
+	</style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">The Refugee Crisis</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="data.html">Data</a>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Visualizations</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a class="nav-link" href="d3/heatmap/heatMapSyria.html">Heat Map</a>
+                    <a class="nav-link" href="d3/geospatial/geospatialMap.html">Geospatial</a>
+                    <a class="nav-link" href="d3/sankey/sankeyFlowDiagram.html">Sankey</a>
+                  </div>
+                </div>
+                <a class="nav-link active" href="about.html">About</a>
+              </nav>
+            </div>
+          </div>
+<!--
+          <div class="inner cover">
+          </div>
+-->  
+          <div class="padding-top">  
+            <div class="contentBox" width=100px height=100px>
+              <p class="contentPara"> Author <b>Denali Marsh</b> is attending the <b>University of San Francisco</b> for computer science, and is interested by both the international refugee crisis as well as data visualization in d3.js. This project was developed for the University of San Francisco's <b>Data Visualization</b> course, with the aim of shedding light on the global refugee crisis. 
+              </p>
+               <img src="photos/UNHCR2015infographic.png" height=40% width=70% alt="2015stats""></img>
+              <p class="contentPara"><br>It can be difficult to grasp how overwhelming the refugee crisis is - the dataset visualized in this project represents millions of people experiencing forced migration over an extended time period. Through the selected visualizations, we hope to bring these faceless refugees center stage and facilitate new ways of conceptualizing the crisis.
+              </p>
+              <p class="contentParaCenter">
+                 See more at <a href="https://github.com/denalimarsh">Github</a> or connect on <a href="https://www.linkedin.com/in/denali-marsh-801818104/">LinkedIn</a>.
+               </p>
+            </div>
+
+           <!--  <div class="mastfoot">
+              <div class="inner">
+                <p>Donate to UNHCHR: <a href="https://donate.unhcr.org/us-en/redirect/">Donations</a></p>
+              </div>
+            </div> -->
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+
+<title>Letter Count Bar Chart</title>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<svg></svg>
+
+<textarea></textarea>
+
+<!-- include d3.js -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<!-- include custom javascript -->
+<script src="../javascript/count.js"></script>
+<script src="../javascript/chart.js"></script>
+
+<!-- here is our core javascript -->
+<script type="text/javascript">
+d3.text("../data/peter.txt", function(error, data) {
+    if (error) throw error;
+
+    console.log(data);
+
+    d3.select("body").select("textarea").text(data);
+
+    // updateData();
+    drawBarChart();
+});
+
+console.log("after d3.text() call");
+
+d3.select("body").select("textarea")
+  .on("keyup", drawBarChart);
+</script>
+
+</body>
