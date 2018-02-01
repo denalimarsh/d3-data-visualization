@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Refugee Crisis Visualized">
+    <meta name="author" content="Denali Marsh">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Data</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	    .cover{
+			}
+	</style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">The Refugee Crisis</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="data.html">Data</a>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Visualizations</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a class="nav-link" href="d3/heatmap/heatMapSyria.html">Heat Map</a>
+                    <a class="nav-link" href="d3/geospatial/geospatialMap.html">Geospatial</a>
+                    <a class="nav-link" href="d3/sankey/sankeyFlowDiagram.html">Sankey</a>
+                  </div>
+                </div>
+                <a class="nav-link" href="about.html">About</a>
+              </nav>
+            </div>
+          </div>
+
+       <!--    <div class="titleBox">
+          <p> I GO HERE <p>
+          </div>
+           -->
+         <div class="padding-top">  
+         
+          <div class="contentBox">
+            <p class="contentPara">The data for this project was obtained from the <a href="http://popstats.unhcr.org/en/demographics">United Nations High Commissioner for Refugees</a> (UNHCR) and the <a href="http://data.un.org/Data.aspx?d=UNHCR&f=indID%3AType-Ref">UN Data Portal</a>. As both sources exclusively provide country-to-country refugee flow statistics per year, additional data processing was conducted in both <b>Excel</b> and <b>Trifacta Wrangler</b>.
+            </p>
+            <p class="contentPara">
+             Below, data is condensed in Excel as the <b>SUMIF()</b> function is used to combine 'Values' from column E only if column C and D have matching 'Year' and 'Month' values, respectively. As such, the result in cell J6 will be equal to the number of refugees that fled the Syrian Arab Republic in May 2013. Instead of working with single digit refugee flows, the processed data allows us to better understand the refugee crisis and create more meaningful visualizations.
+            </p>
+            <img src="photos/excelProcessing.png" alt="Excel Processing"></img>
+            <p class="contentPara">
+            <br>
+            The refugee statistics organized above by month in column J were used in the <a href="heatmap/heatMapSyria.html">heat map</a> visualization. While the <a href="geospatial/geospatialMap.html">geospatial</a> visualization of total hosted refugees by country in 2013 used similar data processing, nodes (country names) and links (refugee flow values) were extracted by hand and reorganized for the <a href="sankey/sankeyFlowDiagram.html">sankey particle flow</a> visualization. Country IDs were assigned according to internationally recognized country codes.   
+            </p>
+          <div>
+
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+    
+    
+  </body>
+</html>

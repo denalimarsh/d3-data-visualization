@@ -1,0 +1,87 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 45px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  overflow:inherit;
+}
+
+.titleClass{
+  top: 0px;
+  font-size: 1.6rem;
+  fill: white;
+  font-weight: 300;
+}
+
+.legendTitle {
+          font-size: 1.6rem;
+          fill: #4F4F4F;
+          font-weight: 300;
+    }
+.axis path, .axis tick, .axis line {
+          fill: none;
+          stroke: none;
+      }
+.border {
+  fill: none;
+  stroke-width: 1.1px;
+}
+
+.interior {
+  stroke: darkgrey;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.exterior {
+  stroke: #bbbbbb;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+
+.undefined {
+  opacity: 0.1;
+}
+
+.undefinedState {
+  opacity: 0.1;  
+}
+
+.titleText {
+  
+}
+
+/* Zoom related */
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.states.active {
+  fill: orange;
+}
+
+
+
+#tooltip {
+  font-weight: 600;
+  text-shadow: 0px 0px 2px white;
+
+  fill: black;
+  stroke: none;
+}

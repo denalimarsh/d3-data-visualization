@@ -1,0 +1,76 @@
+/*
+ * we use css to style our page and our svg elements
+ * the classes/ids defined here must match our d3 code
+ */
+
+body, textarea {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 11pt;
+}
+
+body {
+  margin: 5px;
+  padding: 0px;
+  text-align: center;
+
+  /* see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value */
+  background-color: whitesmoke;
+}
+
+textarea {
+  /* position the textarea on top of the svg */
+  position: absolute;
+  top: 400px;
+  left: 540px;
+
+  margin: 0px;
+  padding: 5px;
+
+  width: 400px;
+  height: 75px;
+
+  /* try changing this color in blockbuilder! */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+textarea, svg {
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
+
+svg {
+  /* bl.ocks.org defaults to 960px by 500px */
+  width: 950px;
+  height: 490px;
+
+  background-color: white;
+}
+
+/* svg elements are styled differently from html elements */
+
+rect.bar {
+  stroke: none;
+  fill: #ff9e16;
+}
+
+#x-axis text,
+#y-axis text {
+  font-size: 10pt;
+  fill: #888888;
+}
+
+#x-axis line {
+  /* tick marks */
+  fill: none;
+  stroke: none;
+}
+
+#x-axis path,
+#y-axis path,
+#y-axis line {
+  fill: none;
+
+  stroke: #bbbbbb;
+  stroke-width: 1px;
+}

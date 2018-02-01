@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Sankey Particles</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/cover.css" rel="stylesheet">
+
+    <style>
+    .node rect {
+      cursor: move;
+      fill-opacity: .9;
+      shape-rendering: crispEdges;
+    }
+
+    .node text {
+      pointer-events: none;
+      text-shadow: 0 1px 0 #fff;
+    }
+
+    .link {
+      fill: none;
+      stroke: #000;
+      stroke-opacity: .2;
+    }
+
+    .link:hover {
+      stroke-opacity: .35;
+    }
+
+    .sankeyWrapper {
+      width: 765px;
+      height: 90px;
+      margin: 20px auto;
+      border: 2px solid #000;
+    }
+
+    .sankeyPadding {
+      background-color:white;
+      padding-bottom:5px;
+      padding-top:5px;
+    }
+
+    .legendClass{
+      top:130px;
+      left:700px;
+    }
+
+    .titleClass{
+      top: 10px;
+      left:-110px;
+    }
+
+    svg {
+      position: relative;
+    }
+
+    canvas {
+      position: absolute;
+    }
+    
+</style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.js' charset='utf-8' type='text/javascript'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.4.2/d3-sankey.js' charset='utf-8' type='text/javascript'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3-timer/1.0.5/d3-timer.js' charset='utf-8' type='text/javascript'></script>
+
+</head>
+<body>
+
+      <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">The Refugee Crisis</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="../../index.html">Home</a>
+                <a class="nav-link" href="../../data.html">Data</a>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn  active">Visualizations</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a class="nav-link" href="../heatmap/heatMapSyria.html">Heat Map</a>
+                    <a class="nav-link" href="../geospatial/geospatialMap.html">Geospatial</a>
+                    <a class="nav-link active" href="sankeyFlowDiagram.html">Sankey</a>
+                  </div>
+                </div>
+                <a class="nav-link" href="../../about.html">About</a>
+              </nav>
+            </div>
+          </div>
+          <!-- place sankey -->
+         <div class="padding-top-small">  
+           <div>
+              <svg id='sankeyLegend' class="legendClass" width='150' height='150'></svg>
+              <svg id='titleOne' class="titleClass" width='200' height = '100'></svg>
+              <div class="sankeyPadding">
+                <canvas width='760' height='450' ></canvas>
+                <svg id='sankey' width='760' height='450' ></svg>
+              </div>
+              <script src='snakeyFlowDiagram.js'></script>
+           </div>
+         </div>
+             <div class="contentVisDescript" width=100px height=100px>
+                <p class="contentPara">
+                  This interactive sankey particle flow visualization shows the top 20 refugees flows of 2010 in absolute figures. Region is encoded by color, allowing us to see from which parts of the world refugees originate as well as which region formally accepts their refugee application. While most of the flow values (hover over a connecting path to see the refugee count) are exact, the two largest (Iraq to Syrian Arab Republic and Iraq to Jordan) are given in approximate values as few reliable statistics can be recovered from 2010 war torn Iraq. Select and drag country bars to move the location of the countries and get different perspectives on the flow of refugees.
+                </p>
+             </div>
+          
+
+         <!--  <div class="mastfoot">
+            <div class="inner">
+              <p>Donate to UNHCHR: <a href="https://donate.unhcr.org/us-en/redirect/">Donations</a></p>
+            </div>
+          </div>
+ -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../bootstrap4/js/bootstrap.min.js"></script>
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

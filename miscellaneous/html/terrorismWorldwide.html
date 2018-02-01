@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- we are using html 5 -->
+
+<head>
+<meta charset="utf-8">
+
+<title>Terrorism Visualization</title>
+
+<!-- this allows us to use the non-standard Roboto web font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">
+
+<!-- this is our custom css stylesheet -->
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<style>
+
+path {
+  fill: #ccc;
+  stroke: #fff;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+
+</style>
+<svg width="1920" height="1000"></svg>
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script>
+
+var projection = d3.geoMercator();
+var path = d3.geoPath()
+    .projection(projection);
+
+var geoMap = d3.select("svg");
+
+
+//load geomap of countries
+d3.json("../json/countries.json", function(error, collection) {
+  if (error) throw error;
+  geoMap.selectAll("path")
+      .data(collection.features)
+    .enter().append("path")
+      .attr("d", path);
+});
+
+// load locations of terrorist attacks
+d3.csv("../data/terrorismJanuary2012.csv", function(data) {
+	console.log("Terrorist attack locations loaded");
+
+geoMap.selectAll("circle")
+	.data(data)
+	.enter()
+	.append("circle")
+	.attr("cx", function(d) {
+		return projection([d.longitude, d.latitude])[0];
+	})
+	.attr("cy", function(d) {
+		return projection([d.longitude, d.latitude])[1];
+	})
+	.attr("r", function(d) {
+		return 2;
+	})
+		.style("fill", "rgb(217,91,67)")	
+		.style("opacity", 0.85)	
+
+});  
+
+
+</script>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scaleBand()
+          .range([0, width])
+          .paddingInner(0.3);
+var y = d3.scaleLinear()
+          .range([height, 0]);
+          
+// append the svg object to the body of the page
+// append a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var barChart = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+
+  d3.csv("../data/terrorismJanuary2012.csv", function(data) {
+	console.log("object loop loaded");
+});  
+
+// get the data
+d3.csv("../data/simpleData.csv", function(error, data) {
+  if (error) throw error;
+
+  // Scale the range of the data in the domains
+  x.domain(data.map(function(d) { return d.country; }));
+  y.domain([0, d3.max(data, function(d) { return d.value; })]);
+
+  // append the rectangles for the bar chart
+  barChart.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.country); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); });
+
+  // add the x Axis
+  barChart.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // add the y Axis
+  barChart.append("g")
+      .call(d3.axisLeft(y));
+
+});
+
+</script>
+
+
+</body>

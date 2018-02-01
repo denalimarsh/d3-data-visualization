@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Refugee Crisis Visualized">
+    <meta name="author" content="Denali Marsh">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>The Refugee Crisis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+	
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">The Refugee Crisis</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="data.html">Data</a>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Visualizations</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a class="nav-link" href="d3/heatmap/heatMapSyria.html">Heat Map</a>
+                    <a class="nav-link" href="d3/geospatial/geospatialMap.html">Geospatial</a>
+                    <a class="nav-link" href="d3/sankey/sankeyFlowDiagram.html">Sankey</a>
+                  </div>
+                </div>
+                <a class="nav-link" href="about.html">About</a>
+              </nav>
+            </div>
+          </div>
+          <div class="padding-top-small">  
+          <div class="titleBoxIndex"> 
+            <p class="fontLarge"><b>65.3 million people</b> have been forced from home.</p>
+            <p class="lead">Among them are nearly <b>21.3 million refugees</b>.</p>
+          </div>
+
+          <img src="https://static01.nyt.com/images/2016/04/18/blogs/18-lens-refugees-slide-8AS8/18-lens-refugees-slide-8AS8-superJumbo.jpg" alt="refugeesfleeing" height=300 width=screen.width>
+
+          <p class="lead">
+              <a href="data.html" class="btn btn-lg btn-secondary">Learn more</a>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+  </body>
+</html>
