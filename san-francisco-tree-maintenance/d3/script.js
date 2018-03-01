@@ -12,7 +12,7 @@ urls.trees += "?$$app_token=" + token;
 
 var margin = {top: 50, left: 0};
 
-var svg = d3.select("body").select("svg")
+var svg = d3.select("body").select("svg#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var g = {

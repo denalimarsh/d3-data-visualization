@@ -34,6 +34,7 @@ titleSVG.append("text")
 	.attr("y", 50)
 	.style("font-size", "28px")
 	.style("text-anchor", "middle")
+	.style("fill", "black")
 	.text("Refugees Accepted by Country (2013)");
 
 

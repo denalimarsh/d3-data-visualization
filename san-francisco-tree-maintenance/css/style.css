@@ -7,7 +7,7 @@ body {
 }
 
 #tooltip {
-  font-weight: 600;
+  font-weight: 200;
   text-shadow: 0px 0px 2px white;
 
   fill: black;
